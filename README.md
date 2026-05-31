@@ -15,6 +15,8 @@ I have plans to add progression, and other rougelite mechanics instead of keepin
 - Component based architecture with clean separation between game state, UI, physics, and input logic
 - Input handled through Unity's new input system
 
+TLDR: It's essentially a completly working, standard pinball game right now
+
 # **What is Coming Next?**
 - Multiball
 - Timer, and a score to reach to "beat a level / screen"
