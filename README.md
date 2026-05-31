@@ -1,7 +1,23 @@
-# ** Pinball **
+# **Pinball**
 
-A personal project of pinball that I work on when I have free time. Continuously being updated!
+A pinball game built from scratch in Unity as a personal project
 
-# ** Information **
+# **What is it?**
 
-Unity Editor Version Used: 6000.4.7f1
+This is an ongoing solo project. The goal is to build a fully featured pinball game in Unity C#. Currently the game is functional but early in development, with placeholder visuals and no audio yet.
+I have plans to add progression, and other rougelite mechanics instead of keeping this as a standard pinball game. 
+
+# **What is Currently Implemented?**
+- Flipper physics using Rigidbody2D with angular interpolation via MoveRotation for responsive, smooth feel
+- Ball launcher with a moving timing bar and green zone detection, rewarding precise input with increased launch force
+- Bumper collision system using UnityEvents, scaling score by incoming ball speed with coroutine based hit animations
+- Scoring, ball count, game over, and restart systems managed through a singleton GameManager
+- Component based architecture with clean separation between game state, UI, physics, and input logic
+- Input handled through Unity's new input system
+
+# **What is Coming Next?**
+- Multiball
+- Timer, and a score to reach to "beat a level / screen"
+- Flipper, Timer, and Ball powerups
+- Sound design
+- Custom art (eventually) 
