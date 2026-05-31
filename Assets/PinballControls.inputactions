@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "name": "PinballControls",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "94e1a582-9a6e-43f8-b3e8-b32d5f768449",
+            "actions": [
+                {
+                    "name": "FlipLeft",
+                    "type": "Button",
+                    "id": "5eae9b26-edec-4afe-878d-57c81471392e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FlipRight",
+                    "type": "Button",
+                    "id": "ed875662-9d74-4f0b-9798-9dc5abb3fd5f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Launch",
+                    "type": "Button",
+                    "id": "23bd817a-d7fe-4c33-927d-a119e61dbfd8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bdae1f41-7b7d-4162-a2f1-22c9d27eb64b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ecf0bb3-1e82-436b-910f-a3c1b9fa022c",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "559c1aef-a59e-4e6f-8d31-78eeef0f3a03",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
