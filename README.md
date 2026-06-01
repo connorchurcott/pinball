@@ -19,7 +19,10 @@ TLDR: It's essentially a completly working, standard pinball game right now
 
 # **What is Coming Next?**
 - Multiball
-- Timer, and a score to reach to "beat a level / screen"
 - Flipper, Timer, and Ball powerups
 - Sound design
-- Custom art (eventually) 
+- Custom art (eventually)
+
+# **Most Recent Update!**
+- Timer, and a score to reach to "beat a level / screen"
+- Scaling level difficulty as you beat levels
