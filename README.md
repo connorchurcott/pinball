@@ -18,11 +18,13 @@ I have plans to add progression, and other rougelite mechanics instead of keepin
 TLDR: It's essentially a completly working, standard pinball game right now
 
 # **What is Coming Next?**
-- Multiball
-- Flipper, Timer, and Ball powerups
+- More ball powerups
+- Other stat based / table powerups
+- "level / screen" switches with randomized bumper placements
+- Ability to select powerups for your run via some condition met
 - Sound design
 - Custom art (eventually)
 
 # **Most Recent Update!**
-- Timer, and a score to reach to "beat a level / screen"
-- Scaling level difficulty as you beat levels
+- Multiball is working!
+- Added the very first "Main Ball", that being the Multiball Ball, which allows you to spawn a second ball at the Main Ball's current position
