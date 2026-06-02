@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class BallLauncher : MonoBehaviour
 {
@@ -106,6 +105,7 @@ public class BallLauncher : MonoBehaviour
             return; 
         }
 
+        ball = collision.GetComponent<Rigidbody2D>(); 
         ballInLane = true; 
     }
 

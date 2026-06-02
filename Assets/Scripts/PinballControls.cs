@@ -118,6 +118,15 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BallAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""da51ba40-b585-4e3c-b1f1-92fcc82b7755"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -153,6 +162,17 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""action"": ""Launch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14cb8396-e997-43dc-99d4-863c04594121"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BallAbility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         m_Game_FlipLeft = m_Game.FindAction("FlipLeft", throwIfNotFound: true);
         m_Game_FlipRight = m_Game.FindAction("FlipRight", throwIfNotFound: true);
         m_Game_Launch = m_Game.FindAction("Launch", throwIfNotFound: true);
+        m_Game_BallAbility = m_Game.FindAction("BallAbility", throwIfNotFound: true);
     }
 
     ~@PinballControls()
@@ -247,6 +268,7 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Game_FlipLeft;
     private readonly InputAction m_Game_FlipRight;
     private readonly InputAction m_Game_Launch;
+    private readonly InputAction m_Game_BallAbility;
     /// <summary>
     /// Provides access to input actions defined in input action map "Game".
     /// </summary>
@@ -270,6 +292,10 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Game/Launch".
         /// </summary>
         public InputAction @Launch => m_Wrapper.m_Game_Launch;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/BallAbility".
+        /// </summary>
+        public InputAction @BallAbility => m_Wrapper.m_Game_BallAbility;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -305,6 +331,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @Launch.started += instance.OnLaunch;
             @Launch.performed += instance.OnLaunch;
             @Launch.canceled += instance.OnLaunch;
+            @BallAbility.started += instance.OnBallAbility;
+            @BallAbility.performed += instance.OnBallAbility;
+            @BallAbility.canceled += instance.OnBallAbility;
         }
 
         /// <summary>
@@ -325,6 +354,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @Launch.started -= instance.OnLaunch;
             @Launch.performed -= instance.OnLaunch;
             @Launch.canceled -= instance.OnLaunch;
+            @BallAbility.started -= instance.OnBallAbility;
+            @BallAbility.performed -= instance.OnBallAbility;
+            @BallAbility.canceled -= instance.OnBallAbility;
         }
 
         /// <summary>
@@ -386,5 +418,12 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLaunch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "BallAbility" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBallAbility(InputAction.CallbackContext context);
     }
 }
