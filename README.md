@@ -20,11 +20,11 @@ TLDR: It's essentially a completly working, standard pinball game right now
 # **What is Coming Next?**
 - More ball powerups
 - Other stat based / table powerups
-- "level / screen" switches with randomized bumper placements
 - Ability to select powerups for your run via some condition met
 - Sound design
 - Custom art (eventually)
 
 # **Most Recent Update!**
-- Multiball is working!
-- Added the very first "Main Ball", that being the Multiball Ball, which allows you to spawn a second ball at the Main Ball's current position
+-  "level / screen / table" switches with randomized bumper placements
+-  this still has some bugs tied to it and the random bumper spawns must be fintuned better  
+
