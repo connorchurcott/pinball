@@ -14,10 +14,6 @@ public class Bumper : MonoBehaviour
     public float expandDuration = 0.05f; 
     public float shrinkDuration = 1f; 
 
-
-    [Header("Events")]
-    public UnityEvent<float> bumperHit; 
-
     Transform visual;
     Vector3 originalScale; 
 
@@ -26,6 +22,17 @@ public class Bumper : MonoBehaviour
         visual = transform.Find("Visual"); 
         originalScale = visual.localScale; 
     }
+
+    // called by TableTransitions when generating random bumper placements. ensures the scaling is set correctly
+    public void SetSize(float size)
+    {
+        if(visual != null)
+        {
+            visual.localScale = new Vector3(size, size, 1f); 
+            originalScale = visual.localScale; 
+        }
+    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,7 +54,9 @@ public class Bumper : MonoBehaviour
 
             //active event with the calculated score passed in 
             float score = pointsAwarded * curSpeed; 
-            bumperHit.Invoke(score); 
+
+            // no more event, just call incrementscore from gamemanager
+            GameManager.Instance.IncrementScore(score); 
         }
 
         StopAllCoroutines(); 

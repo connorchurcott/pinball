@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class BallInstance : MonoBehaviour
 {
+    [Header("Ball Settings")]
+    public float maxVelocity = 10f; 
+
+
     public BallData data; 
 
     float cooldownRemaining = 0f; 
     public bool IsNormalBall { get; private set; }  
 
-    PinballControls controls; 
+    PinballControls controls;
+
+    private Rigidbody2D curBallRB;  
 
     void Awake()
     {
@@ -28,6 +34,8 @@ public class BallInstance : MonoBehaviour
     // assigns the ball the color that is chosen in data, checks if ability is none, if so then this is a normal ball
     void Start()
     {
+        curBallRB = GetComponent<Rigidbody2D>(); 
+
         if(data == null || data.ability == BallAbility.None )
         {
             IsNormalBall = true; 
@@ -45,6 +53,16 @@ public class BallInstance : MonoBehaviour
 
     void Update()
     {
+        // SECTION FOR ALL BALLS
+
+        if(curBallRB.linearVelocity.magnitude > maxVelocity)
+        {
+            curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * maxVelocity; 
+        }
+
+
+        // SECTION FOR ABILITY BALLS
+
         // if this is a standard ball or passive ball just return 
         if(IsNormalBall || data.activation != AbilityActivation.Active)
         {
@@ -62,6 +80,7 @@ public class BallInstance : MonoBehaviour
         {
             ActivateAbility(); 
         }
+
     }
 
     void ActivateAbility()

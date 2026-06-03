@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public BallLauncher ballLauncher; 
     public Transform ballSpawnPosition; 
 
+    [Header("References (Table)")]
+    public TableTransition tableTransition; 
+
     
     public int Score { get; private set; }
     public int BallsRemaining { get; private set; }
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
     bool timerRunning; 
     List<GameObject> allBallsInPlay = new List<GameObject>(); 
     Queue<BallData> mainBallDataQueue = new Queue<BallData>(); 
+
 
     void Awake()
     {
@@ -145,16 +149,31 @@ public class GameManager : MonoBehaviour
     {
         timerRunning = false; 
         CurrentScreen++; 
-        Debug.Log("Screen Cleared, load next screen"); 
 
         // add screen transition + resetting for next screen (hopefully soon :p)
         // for now just increase target, decrease time, reset balls, and keep playing 
         targetScore += 5000 * CurrentScreen; 
-        infoManager.UpdateTargetScoreUI(targetScore);
         timeRemaining = startingTime - 10 * CurrentScreen;  
-        infoManager.UpdateTimerUI(timeRemaining); 
 
         // clear all balls in play, first enque all main balls back
+        ClearAllBallsRequeueMainBalls(); 
+        tableTransition.StartTableTransition(CurrentScreen, OnTransitionComplete); 
+
+    }
+
+    // called only after tableTransition is done, restarts the clock and spawns balls
+    void OnTransitionComplete()
+    {
+        infoManager.UpdateTargetScoreUI(targetScore); 
+        infoManager.UpdateTimerUI(timeRemaining); 
+
+        timerRunning = true; 
+        SpawnBallInLauncher(); 
+    }
+
+    // clears all balls from table but also requeus any main balls into the mainball queue. 
+    void ClearAllBallsRequeueMainBalls()
+    {
         foreach(GameObject ball in allBallsInPlay)
         {
             if(ball != null)
@@ -169,10 +188,6 @@ public class GameManager : MonoBehaviour
             }
         }
         allBallsInPlay.Clear(); 
-
-        infoManager.UpdateBallsUI(BallsRemaining); 
-        SpawnBallInLauncher(); 
-        timerRunning = true; 
     }
 
     // creates new ball, assigns it the next ballData in the queue. Used for "Main" balls that have abilities 
@@ -196,7 +211,7 @@ public class GameManager : MonoBehaviour
     }
 
     // specifically used to spawn a normal ball (ususally for multiballs), spawn at the position of the current main ball usually, but
-    // up to the caller? change later back to launcher if it feels bad
+    // up to the caller
     public void SpawnNormalBall(Vector2 position)
     {
         GameObject newBall = Instantiate(ballPrefab, position, Quaternion.identity); 

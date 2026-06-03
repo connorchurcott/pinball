@@ -124,5 +124,10 @@ public class BallLauncher : MonoBehaviour
         return greenZoneSize; 
     }
 
+    public bool IsBallInLauncher()
+    {
+        return ballInLane; 
+    }
+
 }
 
