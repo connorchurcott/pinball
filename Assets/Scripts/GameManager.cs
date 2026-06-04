@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
 
         // clear all balls in play, first enque all main balls back
         ClearAllBallsRequeueMainBalls(); 
+        ballLauncher.DisableLauncher(); 
         tableTransition.StartTableTransition(CurrentScreen, OnTransitionComplete); 
 
     }

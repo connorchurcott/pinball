@@ -41,12 +41,20 @@ public class BallInstance : MonoBehaviour
             IsNormalBall = true; 
         }
 
+        // for now, if there is a sprite render it otherwise just add the color 
         if(data != null)
         {
             SpriteRenderer sr = GetComponent<SpriteRenderer>(); 
             if(sr != null)
             {
-                sr.color = data.ballColor; 
+                if(data.ballSprite != null)
+                {
+                    sr.sprite = data.ballSprite; 
+                }
+                else
+                {
+                    sr.color = data.ballColor; 
+                }
             }
         }       
     }

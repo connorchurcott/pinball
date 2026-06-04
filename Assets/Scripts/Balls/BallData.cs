@@ -5,6 +5,7 @@ public class BallData : ScriptableObject
 {
     [Header("Identity")]
     public string ballName = "New Ball"; 
+    public Sprite ballSprite;
     public Color ballColor = Color.cyan; 
 
     [Header("Ability")]

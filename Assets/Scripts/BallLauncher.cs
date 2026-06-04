@@ -96,6 +96,12 @@ public class BallLauncher : MonoBehaviour
         barPosition = 0f; 
     }
 
+    // Used to stop the launcher from being able to be fired, called by gameManager for screen transition
+    public void DisableLauncher()
+    {
+        ballInLane = false; 
+    }
+
     // Use the components boxcollider2d to check if a ball is there, if so just set in lane to true so that the update checks again
     // This is only used when the ball re-enters the launcher, not for spawning new balls
     void OnTriggerEnter2D(Collider2D collision)

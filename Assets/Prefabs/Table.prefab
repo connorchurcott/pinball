@@ -662,8 +662,8 @@ MonoBehaviour:
   minBumpers: 1
   maxBumpers: 8
   minSpacingBetweenBumpers: 2
-  bumperMaxSize: 1.5
-  bumperMinSize: 0.5
+  bumperMaxSize: 4
+  bumperMinSize: 1
 --- !u!1 &4524067854607977660
 GameObject:
   m_ObjectHideFlags: 0

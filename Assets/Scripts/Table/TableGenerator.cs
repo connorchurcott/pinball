@@ -16,7 +16,7 @@ public class TableGenerator : MonoBehaviour
     public int minBumpers = 1; 
     public int maxBumpers = 8; 
     public float minSpacingBetweenBumpers = 2f; 
-    public float bumperMaxSize = 1.5f; 
+    public float bumperMaxSize = 1f; 
     public float bumperMinSize = 0.5f; 
 
     Transform bumperContainer; 
