@@ -25,6 +25,6 @@ TLDR: It's essentially a completly working, standard pinball game right now
 - Custom art (eventually)
 
 # **Most Recent Update!**
--  "level / screen / table" switches with randomized bumper placements
--  this still has some bugs tied to it and the random bumper spawns must be fintuned better  
+-  fixed some table generation glitches including: bumper size and amounts, and launcher active during screen transition
+-  custom sprites for normal ball and multiball ball
 
