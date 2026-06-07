@@ -20,7 +20,7 @@ public class Bumper : MonoBehaviour
     void Awake()
     {
         visual = transform.Find("Visual"); 
-        originalScale = visual.localScale; 
+        originalScale = transform.localScale; 
     }
 
     // called by TableTransitions when generating random bumper placements. ensures the scaling is set correctly
@@ -28,8 +28,8 @@ public class Bumper : MonoBehaviour
     {
         if(visual != null)
         {
-            visual.localScale = new Vector3(size, size, 1f); 
-            originalScale = visual.localScale; 
+            transform.localScale = new Vector3(size, size, 1f); 
+            originalScale = transform.localScale; 
         }
     }
 
@@ -60,7 +60,7 @@ public class Bumper : MonoBehaviour
         }
 
         StopAllCoroutines(); 
-        visual.localScale = originalScale; 
+        transform.localScale = originalScale; 
         StartCoroutine(ExpandAnimation()); 
     }
 
@@ -73,7 +73,7 @@ public class Bumper : MonoBehaviour
         while( t < expandDuration)
         {
             t += Time.deltaTime; 
-            visual.localScale = Vector3.Lerp(originalScale, expandedScale, t / expandDuration); 
+            transform.localScale = Vector3.Lerp(originalScale, expandedScale, t / expandDuration); 
             yield return null; 
         }
 
@@ -82,10 +82,10 @@ public class Bumper : MonoBehaviour
         while( t < shrinkDuration)
         {
             t += Time.deltaTime; 
-            visual.localScale = Vector3.Lerp(expandedScale, originalScale, t / shrinkDuration); 
+            transform.localScale = Vector3.Lerp(expandedScale, originalScale, t / shrinkDuration); 
             yield return null; 
         }
 
-        visual.localScale = originalScale; 
+        transform.localScale = originalScale; 
     }
 }

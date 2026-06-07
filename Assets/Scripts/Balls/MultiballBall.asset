@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MultiballBall
   m_EditorClassIdentifier: Assembly-CSharp::BallData
   ballName: MultiballBall
-  ballColor: {r: 1, g: 0.57323545, b: 0, a: 1}
+  ballSprite: {fileID: 7657106335989055175, guid: 4d1aab1e550c7de449ecae9a669befe0, type: 3}
+  ballColor: {r: 1, g: 1, b: 1, a: 1}
   ability: 1
   activation: 1
   cooldown: 50
