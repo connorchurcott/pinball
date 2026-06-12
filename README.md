@@ -25,6 +25,5 @@ TLDR: It's essentially a completly working, standard pinball game right now
 - Custom art (eventually)
 
 # **Most Recent Update!**
--  fixed some table generation glitches including: bumper size and amounts, and launcher active during screen transition
--  custom sprites for normal ball and multiball ball
+- overhaul of flipper system to take custom sprites. added first custom flipper sprite!
 
