@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2542364478207339178}
   - component: {fileID: 297166463880835880}
-  - component: {fileID: 8014086915262541088}
+  - component: {fileID: 3400413023750535400}
   m_Layer: 8
   m_Name: Flipper_Right_Visual
   m_TagString: Untagged
@@ -303,8 +303,8 @@ Transform:
   m_GameObject: {fileID: 1794743880934946743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.45, y: -1.27, z: 0}
+  m_LocalScale: {x: -0.26, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 728413663966374537}
@@ -358,7 +358,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 9dfd8edb3717ce245963d75d176d8218, type: 3}
+  m_Sprite: {fileID: 9121391542839406241, guid: 3d7a34c2e3f5eba47b7a20a6cf1c226c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -368,8 +368,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &8014086915262541088
-BoxCollider2D:
+--- !u!60 &3400413023750535400
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -406,14 +406,27 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.96875, y: 1.59375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.9618306, y: -0.23370725}
+      - {x: 1.9562602, y: -0.06879479}
+      - {x: 1.2939429, y: 0.22974703}
+      - {x: -0.060517248, y: 0.54800683}
+      - {x: -0.9895176, y: 0.692472}
+      - {x: -1.5856675, y: 0.7620016}
+      - {x: -1.984375, y: 0.203125}
+      - {x: -1.984375, y: -0.359375}
+      - {x: -1.671875, y: -0.796875}
+      - {x: -0.390625, y: -0.796875}
+      - {x: 0.7528512, y: -0.5157298}
+      - {x: 1.7757288, y: -0.37052292}
+  m_UseDelaunayMesh: 1
 --- !u!1 &1996611136058754910
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +673,7 @@ MonoBehaviour:
   spawnXMin: -15
   spawnXMax: 1
   minBumpers: 1
-  maxBumpers: 8
+  maxBumpers: 4
   minSpacingBetweenBumpers: 2
   bumperMaxSize: 4
   bumperMinSize: 1
@@ -812,7 +825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7581583427282448277}
   - component: {fileID: 2830478931031034222}
-  - component: {fileID: 917928966141407629}
+  - component: {fileID: 1632931760282746936}
   m_Layer: 8
   m_Name: Flipper_Left_Visual
   m_TagString: Untagged
@@ -829,8 +842,8 @@ Transform:
   m_GameObject: {fileID: 4587572638888830356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.47, y: -1.12, z: 0}
+  m_LocalScale: {x: 0.26, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5794062001534979695}
@@ -884,7 +897,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 9dfd8edb3717ce245963d75d176d8218, type: 3}
+  m_Sprite: {fileID: 9121391542839406241, guid: 3d7a34c2e3f5eba47b7a20a6cf1c226c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -894,8 +907,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &917928966141407629
-BoxCollider2D:
+--- !u!60 &1632931760282746936
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -932,14 +945,28 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.96875, y: 1.59375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.8955613, y: -0.012624763}
+      - {x: 1.3290435, y: 0.21192214}
+      - {x: 0.29968196, y: 0.470245}
+      - {x: -0.12856615, y: 0.5494222}
+      - {x: -0.66849184, y: 0.628953}
+      - {x: -1.692891, y: 0.6683803}
+      - {x: -1.8060617, y: 0.326643}
+      - {x: -1.984375, y: -0.359375}
+      - {x: -1.671875, y: -0.796875}
+      - {x: -0.390625, y: -0.796875}
+      - {x: 0.796875, y: -0.609375}
+      - {x: 1.7187688, y: -0.33025795}
+      - {x: 1.9233155, y: -0.26257038}
+  m_UseDelaunayMesh: 1
 --- !u!1 &4794506715260587210
 GameObject:
   m_ObjectHideFlags: 0
