@@ -25,5 +25,5 @@ TLDR: It's essentially a completly working, standard pinball game right now
 - Custom art (eventually)
 
 # **Most Recent Update!**
-- overhaul of flipper system to take custom sprites. added first custom flipper sprite!
+- built the script to handle random loot drops (for different ball powerups). need to implement the UI for selection next
 
