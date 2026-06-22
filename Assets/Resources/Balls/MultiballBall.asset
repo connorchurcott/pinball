@@ -15,6 +15,7 @@ MonoBehaviour:
   ballName: MultiballBall
   ballSprite: {fileID: 7657106335989055175, guid: 4d1aab1e550c7de449ecae9a669befe0, type: 3}
   ballColor: {r: 1, g: 1, b: 1, a: 1}
+  rarity: 1
   ability: 1
   activation: 1
   cooldown: 50
