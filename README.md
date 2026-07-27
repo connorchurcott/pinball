@@ -25,5 +25,5 @@ TLDR: It's essentially a completly working, standard pinball game right now
 - Custom art (eventually)
 
 # **Most Recent Update!**
-- built the script to handle random loot drops (for different ball powerups). need to implement the UI for selection next
+- Added a new ball powerup! it allows you to slow down time for a short period of time in order for you to get a proper hit on the flipper! Inspired by the Sandevistan
 
