@@ -1,7 +1,8 @@
     public enum BallAbility
     {
         None, 
-        SpawnOneMultiball
+        SpawnOneMultiball, 
+        SlowDownSpeedOneSecond
     }
 
 

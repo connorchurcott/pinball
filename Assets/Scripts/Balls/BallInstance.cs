@@ -1,3 +1,7 @@
+using System.Collections;
+using Unity.ProjectAuditor.Editor.Core;
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class BallInstance : MonoBehaviour
@@ -14,6 +18,8 @@ public class BallInstance : MonoBehaviour
     PinballControls controls;
 
     private Rigidbody2D curBallRB;  
+    private bool velocityLocked = false; 
+    private float velocityLockedSpeed = 0f; 
 
     void Awake()
     {
@@ -63,10 +69,6 @@ public class BallInstance : MonoBehaviour
     {
         // SECTION FOR ALL BALLS
 
-        if(curBallRB.linearVelocity.magnitude > maxVelocity)
-        {
-            curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * maxVelocity; 
-        }
 
 
         // SECTION FOR ABILITY BALLS
@@ -88,6 +90,21 @@ public class BallInstance : MonoBehaviour
         {
             ActivateAbility(); 
         }
+    }
+
+    void FixedUpdate()
+    {
+        // for bullet time, currently used by SlowTimeBall
+        if (velocityLocked)
+        {
+            curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * velocityLockedSpeed; 
+            return; 
+        }
+
+        if(curBallRB.linearVelocity.magnitude > maxVelocity)
+        {
+            curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * maxVelocity; 
+        }
 
     }
 
@@ -101,6 +118,35 @@ public class BallInstance : MonoBehaviour
             cooldownRemaining = data.cooldown; 
             return; 
         }
+
+        if(data.ability == BallAbility.SlowDownSpeedOneSecond)
+        {
+            StartCoroutine(SlowDownSpeedOneSecondRoutine()); 
+            cooldownRemaining = data.cooldown; 
+            return; 
+        }
     }
 
+
+    // COROUTINES FOR DIFFERENT BALL ABILITIES
+    IEnumerator SlowDownSpeedOneSecondRoutine()
+    {
+        const float SPEED_MULTIPLIER = 0.25f; 
+        const float DAMPEN_TIME = 1.5f; 
+
+        float originalSpeed = curBallRB.linearVelocity.magnitude; 
+        float originalGravity = curBallRB.gravityScale; 
+
+
+        curBallRB.gravityScale = 0f; 
+        velocityLockedSpeed = originalSpeed * SPEED_MULTIPLIER; 
+        velocityLocked = true; 
+        curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * velocityLockedSpeed; 
+
+        yield return new WaitForSeconds(DAMPEN_TIME); 
+
+        curBallRB.gravityScale = originalGravity; 
+        velocityLocked = false; 
+        curBallRB.linearVelocity = curBallRB.linearVelocity.normalized * originalSpeed; 
+    }
 }
